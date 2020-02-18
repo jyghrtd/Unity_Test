@@ -42,14 +42,14 @@ public class JoystickTest : MonoBehaviour, IPointerUpHandler, IPointerDownHandle
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector2 value = eventData.position - ((Vector2)rect_JBackground.position);
+        Vector2 value = eventData.position - (Vector2)rect_JBackground.position;
 
         value = Vector2.ClampMagnitude(value, radius);
         rect_Joystick.localPosition = value;
 
         float distance = Vector2.Distance(rect_JBackground.position, rect_Joystick.position) / radius;
         value = value.normalized;
-        movePosition = new Vector3(value.x * moveSpeed * Time.deltaTime* distance, value.y * moveSpeed * Time.deltaTime * distance, 0f);
+        movePosition = new Vector3(value.x * moveSpeed * Time.deltaTime * distance, value.y * moveSpeed * Time.deltaTime * distance, 0f);
     }
 
     public void OnPointerDown(PointerEventData eventData)
