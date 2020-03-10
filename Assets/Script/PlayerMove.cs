@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     static public PlayerMove instance;
+    private SaveNLoad theSaveNLoad;
 
     public string currentMapName; //transferMap 스크립트의 transferMapName변수값 저장
+    public string currentSceneName; //현재 한 신에 맵 여러개 안 만들었음
 
     public int speed;
 
